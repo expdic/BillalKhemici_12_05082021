@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+.Titre {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: flex-start;
+  padding: 6em 0 0 14em;
+  font-family: "Roboto";
+}
+.Titre > h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+.Titre > h1 > span {
+  color: #e60000;
+
+}
+.Titre > p {
+  font-size: 15px;
+  font-weight: 450;
+  width: 100%;
+}
+.Titre > aside {
+  margin-top: 3em;
+  height: 563px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Titre > div {
+  position: absolute;
+  margin-top: 31em;
+  width: 60%;
+  max-width: 1240px;
+  height: 210px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

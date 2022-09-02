@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+.divError {
+  font-weight: 500;
+  font-size: 48px;
+
+}
+
+.spanError {
+  color: red;
+  font-size: 10rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.charts {
+  display: flex;
+  flex-direction: column;
+  margin-left: 13rem;
+  margin-top: 3rem;
+}
+
+.barchart {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  margin: 14px;
+  width: 835px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fbfbfb;
+  height: 320px;
+
+}
+
+.barchart > span {
+  font-family: "Roboto";
+  position: absolute;
+  padding: 0 40rem 17rem 0;
+  font-size: 15px;
+  color: #20253a;
+}
+
+.squarecharts {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.linechart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 14px;
+  width: 258px;
+  height: 268px;
+  background: #ff0000;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0);
+  border-radius: 5px;
+} 
+
+.linechart> p {
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  font-family: "Roboto";
+  position: absolute;
+  width: 125px;
+  padding-bottom: 10rem;
+  padding-right: 4rem;
+}
+
+
+/* RADAR */ 
+
+.radarchart {
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 14px;
+  width: 258px;
+  height: 268px;
+  display: flex;
+  flex-direction: column;
+  background: #282d30;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+
+}
+
+
+
+/* SCORE */ 
+
+
+.radialbarchart{
+  align-items: center;
+  border-radius: 5px;
+  margin: 14px;
+  width: 258px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 268px;
+}
+
+.score {
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #20253a;
+}
+.scoretitre {
+  left: 1rem;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  position: absolute;
+  top: 0rem;
+  color: #20253a;
+  font-family: "Roboto";
+}
+.scorediv {
+  align-items: center;
+  font-weight: 500;
+  font-size: 15px;
+  color: #74798b;
+  font-family: "Roboto";
+  text-align: center;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+
+}
+.score100 {
+  color: #282d30;
+  font-family: "Roboto";
+  font-size: 30px;
+  font-weight: 700;
+
+}
+
+
+
+/*CARDS */
+
+.cardscontent {
+  margin-left: 2rem;
+  margin-top: -22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cardscontent>div {
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  width: 258px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 124px;
+}
+
+.cardicondiv {
+  height: 40px;
+  border-radius: 6px;
+  margin-left: 24px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+
+}
+.cardicondiv >img {
+  width: 60px;
+}
+
+.cardcountunit {  
+  line-height: 24px;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 15px;
+
+}
+
+.cardtype {
+  line-height: 24px;
+  font-family: "Roboto";
+  color: #74798c;
+  font-weight: 500;
+  font-size: 14px;
+
+}

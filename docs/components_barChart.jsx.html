@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/barChart.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/barChart.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import PropTypes from "prop-types";
+import '../styles/components/stats.css'
+
+/* Importing the components from the recharts library. */
+import {
+    ResponsiveContainer,
+    BarChart,
+    CartesianGrid,
+    XAxis,
+    YAxis,
+    Bar,
+    Tooltip,
+    Legend,
+} from "recharts";
+
+/**
+ * Return react component that display a bar chart 
+ * @param {string} day the measure day 
+ * @param {number} kilogram the mass in the day 
+ * @param {number} calories the amount calories in the day 
+ * @returns React component 
+ */
+function barChart(props) {
+    const data = props.data;
+    const userMainData = [];
+
+
+
+    for (let i = 0; i &lt; data.length; i++) {
+        userMainData.push({
+            index: i + 1,
+            kilogram: data[i].kilogram,
+            calories: data[i].calories,
+        });
+    }
+
+
+
+    const kgArray = data.map((kilogram) => kilogram.kilogram);
+    const minKg = Math.min(...kgArray);
+    const maxKg = Math.max(...kgArray);
+    const calArray = data.map((calories) => calories.calories);
+    const minCal = Math.min(...calArray);
+    const maxCal = Math.max(...calArray);
+
+    const legendValue = (value) => {
+        return (
+            &lt;span
+                style={{
+                    color: "#74798C",
+                    fontSize: "14px",
+
+                }}
+            >
+                {value}
+            &lt;/span>
+        );
+    };
+    return (
+        &lt;ResponsiveContainer>
+
+            &lt;BarChart data={userMainData} label="test">
+                &lt;CartesianGrid
+                    strokeDasharray="2 2"
+                    stroke="#DEDEDE"
+                    vertical={false}
+                />
+                &lt;XAxis
+                    dataKey="index"
+                    tick={{ fill: "#9BEAC", fontSize: "15", fontWeight: 400 }}
+                    tickLine={false}
+                    tickSize={16}
+                    stroke={"#DEDEDE"}
+                />
+                &lt;YAxis
+                    yAxisId={0}
+                    dataKey="kilogram"
+                    orientation="right"
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fill: "#9B9EAC", fontSize: "14", fontWeight: 500 }}
+                    domain={[minKg - 2, maxKg + 2]}
+                />
+                &lt;YAxis
+                    yAxisId={1}
+                    dataKey="calories"
+                    hide={true}
+                    domain={[minCal - 120, maxCal]}
+                />
+                &lt;Tooltip
+                    contentStyle={{
+                        backgroundColor: "#FF0000",
+                        fontSize: 7,
+                        fontWeight: "500",
+                        border: "0 transparent",
+                        padding: "10px",
+                    }}
+                    itemStyle={{ color: "#FFFFFF", fontSize: "7px", lineHeight: "24px" }}
+                    formatter={(value, name, unit) => [value, unit]}
+                    labelStyle={{ display: "none" }}
+                    cursor={{
+                        strokeOpacity: 0.1,
+                        strokeWidth: 60,
+                        height: 263,
+                    }}
+                />
+                &lt;Legend
+                    layout="horizontal"
+                    verticalAlign="top"
+                    align="right"
+                    iconType="circle"
+                    iconSize={8}
+                    height={47}
+                    formatter={legendValue}
+                />
+                &lt;Bar
+                    yAxisId={0}
+                    dataKey="kilogram"
+                    fill="#282D30"
+                    barSize={7}
+                    radius={[10, 10, 0, 0]}
+                    unit="kg"
+                    name="Poids (kg)"
+                />
+                &lt;Bar
+                    yAxisId={1}
+                    dataKey="calories"
+                    fill="#E60000"
+                    barSize={7}
+                    radius={[10, 10, 0, 0]}
+                    unit="Kcal"
+                    name="Calories brûlées (kCal)"
+                />
+            &lt;/BarChart>
+        &lt;/ResponsiveContainer>
+    );
+
+}
+
+barChart.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            day: PropTypes.string,
+            kilogram: PropTypes.number,
+            calories: PropTypes.number,
+        })
+    ).isRequired,
+};
+
+export default barChart</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#barChart">barChart</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#Content">Content</a></li><li><a href="global.html#errorUser">errorUser</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Homepage">Homepage</a></li><li><a href="global.html#lineChart">lineChart</a></li><li><a href="global.html#navigationLeft">navigationLeft</a></li><li><a href="global.html#radarChart">radarChart</a></li><li><a href="global.html#radialBarChart">radialBarChart</a></li><li><a href="global.html#Titre">Titre</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Sep 02 2022 17:08:10 GMT+0100 (heure normale d’Afrique de l’Ouest)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
