@@ -2,13 +2,15 @@
 
 .divError {
   font-weight: 500;
-  font-size: 48px;
+  font-size: 50px;
+  margin-left: 35rem;
+  padding-top: 30rem;
 
 }
 
 .spanError {
   color: red;
-  font-size: 10rem;
+  font-size: 50px;
 }
 
 .stats {

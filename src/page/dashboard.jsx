@@ -14,7 +14,6 @@ function Dashboard(props) {
     const [userFetchedAvgSessions, setUserFetchedAvgSessions] = useState(null);
     const [userFetchedPerformance, setUserFetchedPerformance] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-
     const useMockedData = false;
 
 
@@ -30,22 +29,36 @@ function Dashboard(props) {
             async function fetchApi() {
                 setUserFetchedData(await fetchData(userId, ""));
                 setUserFetchedActivity(await fetchData(userId, "activity"));
-                setUserFetchedAvgSessions(await fetchData(userId, "averagesessions"));
+                setUserFetchedAvgSessions(await fetchData(userId, "average-sessions"));
                 setUserFetchedPerformance(await fetchData(userId, "performance"));
                 setIsLoaded(true);
 
+
+
+
+
             }
             fetchApi();
+
+
+
         }
-    }, [
-        setUserFetchedData,
-        setUserFetchedActivity,
-        setUserFetchedAvgSessions,
-        setUserFetchedPerformance,
-        userId,
-        useMockedData,
-    ]);
+
+
+
+    },
+        [
+            setUserFetchedData,
+            setUserFetchedActivity,
+            setUserFetchedAvgSessions,
+            setUserFetchedPerformance,
+            userId,
+            useMockedData,
+            setIsLoaded,
+        ]);
+
     return (
+
 
         isLoaded ? (
             <Content

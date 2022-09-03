@@ -29,7 +29,7 @@ const fetchData = async (id, urlParam) => {
             jsonResponse.data.userId,
             jsonResponse.data.sessions
         ),
-        "averagesessions": new userAvgSessionsModel(
+        "average-sessions": new userAvgSessionsModel(
             jsonResponse.data.userId,
             jsonResponse.data.sessions
         ),
