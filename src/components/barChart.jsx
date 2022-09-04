@@ -25,7 +25,7 @@ function barChart(props) {
     const userMainData = [];
 
 
-
+    // We push data we have from prop into the new array for the data match in the mockup
     for (let i = 0; i < data.length; i++) {
         userMainData.push({
             index: i + 1,
@@ -35,24 +35,35 @@ function barChart(props) {
     }
 
 
-
+    // Have min and max values of the data to set the domain of the Y axis (kilogram )
     const kgArray = data.map((kilogram) => kilogram.kilogram);
     const minKg = Math.min(...kgArray);
     const maxKg = Math.max(...kgArray);
+    // Have min and max values of the data to set the domain of the Y axis (calories )
     const calArray = data.map((calories) => calories.calories);
     const minCal = Math.min(...calArray);
     const maxCal = Math.max(...calArray);
 
+
+
+    /**
+   * returns span element with value passed to it for legend charts 
+   * @param {string} value unite of data type
+   * @returns  span element
+   */
     const legendValue = (value) => {
         return (
             <span
                 style={{
+                    //writing at the top right of the barchart in gray and 14 px
                     color: "#74798C",
                     fontSize: "14px",
 
                 }}
+            // value of data ( calories or kilogram)
             >
                 {value}
+
             </span>
         );
     };

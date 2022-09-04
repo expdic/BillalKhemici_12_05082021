@@ -9,15 +9,29 @@ const url = "http://localhost:";
 const port = "3000";
 const api = url + port + "/";
 
-
+/**
+ * 
+ * @param {string} id id of user the user from fetch 
+ * @param {string} urlParam the last API waypoint used to retrieve specific data
+ * @returns fetch data
+ */
 const fetchData = async (id, urlParam) => {
+    // entire API URL variable 
     const fullUrl = api + "user/" + id + "/" + urlParam;
+
+    // Fetch data from API 
     const getRequest = await fetch(fullUrl);
+
+    // Data to JSON 
     const jsonResponse = await getRequest.json();
+
+    // Return false if we have a error 
     if (jsonResponse === "can not get user") {
         return false;
     }
 
+
+    // Standarize the API response 
     const route = {
         "": new userDataModel(
             jsonResponse.data.id,
@@ -39,6 +53,8 @@ const fetchData = async (id, urlParam) => {
             jsonResponse.data.data
         ),
     };
+
+    // Returns object depending of key value determined by API endpoint (Url Parameter)
     return route[urlParam];
 };
 export default fetchData;

@@ -13,7 +13,7 @@ function lineChart(props) {
     const days = ["L", "M", "M", "J", "V", "S", "D"];
     const averageSessions = [];
 
-
+    // Create object array with the day of the week and session lenght
     for (let i = 0; i < data.length; i++) {
         averageSessions.push({
             day: days[i],

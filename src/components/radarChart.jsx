@@ -15,17 +15,16 @@ import PropTypes from "prop-types";
  * @return  React component
  */
 function radarChart(props) {
-    console.log("imanema", props)
+
     const performances = props.data;
-    const { data, kind } = performances;
-    let userMainData = [];
-    let kindArray = [];
+    const { data, kind } = performances; // we 2 type of data for create the chart 
+    let userMainData = [];// initialisation of the array for serve as data used by chart 
+    let kindArray = [];// initialisation of the array contain the names of axis 
 
 
-
+    // We push the data from the prop in the new array with correspending kindname 
     for (let i = 0; i < data.length; i++) {
         kindArray.push(kind[i + 1]);
-        console.log(kindArray)
         userMainData.push({
             kind: kindArray[i],
             valeur: data[i].value,
